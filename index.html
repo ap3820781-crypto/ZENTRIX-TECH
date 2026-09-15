@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZENTRYX-TECH | Soluciones Tecnológicas</title>
+
+    <style>
+        :root {
+            --azul: #4678c2;
+            --negro: #000000;
+            --blanco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--blanco);
+            color: var(--negro);
+            line-height: 1.6;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--negro);
+            color: var(--blanco);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 7%;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+        }
+
+        .marca {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* ESPACIO RESERVADO PARA EL LOGO */
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            border: 2px solid var(--azul);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--azul);
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .marca h2 {
+            color: var(--blanco);
+            font-size: 21px;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+        }
+
+        nav a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--azul);
+        }
+
+        /* ================= INICIO ================= */
+
+        #inicio {
+            min-height: 90vh;
+            background: var(--azul);
+            color: var(--blanco);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 7%;
+        }
+
+        .inicio-contenido {
+            max-width: 900px;
+        }
+
+        #inicio h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        #inicio p {
+            font-size: 21px;
+            margin-bottom: 30px;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 14px 25px;
+            background: var(--negro);
+            color: var(--blanco);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background: var(--blanco);
+            color: var(--negro);
+            transform: translateY(-3px);
+        }
+
+        /* ================= SECCIONES ================= */
+
+        section {
+            padding: 80px 7%;
+        }
+
+        .titulo {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 45px;
+            color: var(--negro);
+        }
+
+        .titulo::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--azul);
+            margin: 12px auto;
+            border-radius: 5px;
+        }
+
+        /* ================= SERVICIOS ================= */
+
+        .servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .tarjeta {
+            background: var(--blanco);
+            border: 2px solid var(--azul);
+            border-radius: 15px;
+            padding: 30px 22px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .icono {
+            font-size: 42px;
+        }
+
+        .tarjeta h3 {
+            margin: 15px 0;
+            color: var(--azul);
+            font-size: 21px;
+        }
+
+        /* ================= TIENDA ================= */
+
+        #tienda {
+            background: #f5f7fa;
+        }
+
+        .tienda-contenedor {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 28px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .producto {
+            background: var(--blanco);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid var(--azul);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .producto h3 {
+            color: var(--azul);
+            margin: 15px 0;
+            font-size: 23px;
+        }
+
+        .producto p {
+            margin-bottom: 20px;
+        }
+
+        .whatsapp {
+            display: inline-block;
+            background: var(--azul);
+            color: var(--blanco);
+            padding: 12px 20px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .whatsapp:hover {
+            background: var(--negro);
+        }
+
+        /* ================= PROMOCIONES ================= */
+
+        #promociones {
+            background: var(--negro);
+            color: var(--blanco);
+        }
+
+        #promociones .titulo {
+            color: var(--blanco);
+        }
+
+        .promociones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .promo {
+            border: 2px solid var(--azul);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .promo h3 {
+            color: var(--azul);
+            margin-bottom: 10px;
+        }
+
+        /* ================= NOSOTROS ================= */
+
+        .nosotros {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* ================= MISIÓN Y VISIÓN ================= */
+
+        .mision-vision {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 50px auto 0;
+        }
+
+        .mv {
+            border-left: 5px solid var(--azul);
+            padding: 25px;
+            background: #f5f7fa;
+            border-radius: 10px;
+        }
+
+        .mv h3 {
+            color: var(--azul);
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        /* ================= CONTACTO ================= */
+
+        #contacto {
+            background: var(--azul);
+            color: var(--blanco);
+            text-align: center;
+        }
+
+        #contacto .titulo {
+            color: var(--blanco);
+        }
+
+        .contacto-info {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contacto-info p {
+            font-size: 19px;
+            margin: 12px;
+        }
+
+        .contacto-info a {
+            color: var(--blanco);
+            font-weight: bold;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: var(--negro);
+            color: var(--blanco);
+            text-align: center;
+            padding: 22px;
+        }
+
+        /* ================= CELULAR ================= */
+
+        @media (max-width: 750px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            #inicio h1 {
+                font-size: 40px;
+            }
+
+            #inicio p {
+                font-size: 18px;
+            }
+
+            .mision-vision {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .titulo {
+                font-size: 31px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= ENCABEZADO ================= -->
+
+    <header>
+
+        <div class="marca">
+
+            <!-- AQUÍ IRÁ EL LOGO MÁS ADELANTE -->
+            <div class="logo">
+                LOGO
+            </div>
+
+            <h2>ZENTRYX-TECH</h2>
+
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#tienda">Tienda</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= INICIO ================= -->
+
+    <section id="inicio">
+
+        <div class="inicio-contenido">
+
+            <h1>ZENTRYX-TECH</h1>
+
+            <p>
+                Soluciones tecnológicas para personas, instituciones
+                y empresas.
+            </p>
+
+            <a href="#tienda" class="boton">
+                Ver nuestros servicios
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SERVICIOS ================= -->
+
+    <section id="servicios">
+
+        <h2 class="titulo">Nuestros Servicios</h2>
+
+        <div class="servicios">
+
+            <div class="tarjeta">
+                <div class="icono">🖥️</div>
+                <h3>Mantenimiento de Hardware y Software</h3>
+                <p>
+                    Mantenimiento y soporte para equipos tecnológicos,
+                    buscando mejorar su funcionamiento y rendimiento.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <div class="icono">📚</div>
+                <h3>Alfabetización Tecnológica</h3>
+                <p>
+                    Orientación y acompañamiento para aprender a utilizar
+                    herramientas tecnológicas de manera responsable.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <div class="icono">📢</div>
+                <h3>Marketing Digital</h3>
+                <p>
+                    Soluciones digitales para mejorar la presencia y
+                    comunicación de negocios y proyectos.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <div class="icono">🗄️</div>
+                <h3>Bases de Datos</h3>
+                <p>
+                    Organización y gestión de información mediante
+                    soluciones de bases de datos.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <div class="icono">🌐</div>
+                <h3>Redes de Telecomunicaciones</h3>
+                <p>
+                    Soluciones relacionadas con redes y conectividad
+                    tecnológica.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TIENDA ================= -->
+
+    <section id="tienda">
+
+        <h2 class="titulo">Tienda</h2>
+
+        <div class="tienda-contenedor">
+
+            <!-- DISEÑO WEB -->
+
+            <div class="producto">
+
+                <div class="icono">🌐</div>
+
+                <h3>Diseño Web</h3>
+
+                <p>
+                    Creación de páginas web modernas, funcionales
+                    y adaptadas a las necesidades de cada cliente.
+                </p>
+
+                <a
+                    class="whatsapp"
+                    href="https://wa.me/573176919658?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Dise%C3%B1o%20Web%20de%20ZENTRYX-TECH.%20Quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n."
+                    target="_blank">
+                    Solicitar servicio
+                </a>
+
+            </div>
+
+
+            <!-- TIENDAS VIRTUALES -->
+
+            <div class="producto">
+
+                <div class="icono">🛒</div>
+
+                <h3>Tiendas Virtuales</h3>
+
+                <p>
+                    Desarrollo de tiendas virtuales para mostrar
+                    productos y facilitar la presencia digital.
+                </p>
+
+                <a
+                    class="whatsapp"
+                    href="https://wa.me/573176919658?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Tiendas%20Virtuales%20de%20ZENTRYX-TECH.%20Quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n."
+                    target="_blank">
+                    Solicitar servicio
+                </a>
+
+            </div>
+
+
+            <!-- SOPORTE TÉCNICO -->
+
+            <div class="producto">
+
+                <div class="icono">🔧</div>
+
+                <h3>Soporte Técnico</h3>
+
+                <p>
+                    Asistencia para resolver problemas relacionados
+                    con equipos y herramientas tecnológicas.
+                </p>
+
+                <a
+                    class="whatsapp"
+                    href="https://wa.me/573176919658?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Soporte%20T%C3%A9cnico%20de%20ZENTRYX-TECH.%20Quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n."
+                    target="_blank">
+                    Solicitar servicio
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROMOCIONES ================= -->
+
+    <section id="promociones">
+
+        <h2 class="titulo">Promociones</h2>
+
+        <div class="promociones">
+
+            <div class="promo">
+
+                <h3>🚚 Domicilio Gratis</h3>
+
+                <p>
+                    Domicilio gratis para nuestros primeros clientes.
+                </p>
+
+            </div>
+
+            <div class="promo">
+
+                <h3>🎓 Descuento Especial</h3>
+
+                <p>
+                    Descuento especial para estudiantes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NOSOTROS ================= -->
+
+    <section id="nosotros">
+
+        <h2 class="titulo">Sobre Nosotros</h2>
+
+        <div class="nosotros">
+
+            <p>
+                En Zentryx Tech trabajamos para ofrecer las mejores
+                soluciones tecnológicas y ayudar a nuestros clientes
+                a crecer en el mundo digital.
+            </p>
+
+        </div>
+
+
+        <!-- MISIÓN Y VISIÓN -->
+
+        <div class="mision-vision">
+
+            <div class="mv">
+
+                <h3>Misión</h3>
+
+                <p>
+                    En Zentryx Tech brindamos marketing digital, redes de
+                    telecomunicaciones, mantenimiento de equipos, gestión
+                    de bases de datos, alfabetización tecnológica y
+                    desarrollo de páginas web, con calidad y precios justos,
+                    acompañando a nuestros clientes de forma cercana,
+                    transparente y profesional para que optimicen sus
+                    procesos y aprendan a usar la tecnología de manera
+                    responsable.
+                </p>
+
+            </div>
+
+
+            <div class="mv">
+
+                <h3>Visión</h3>
+
+                <p>
+                    Para el año 2032, proyectamos consolidarnos como empresa
+                    líder en el sector tecnológico a nivel regional y
+                    nacional, destacándonos por precios justos, servicios
+                    de alta calidad y un soporte técnico flexible que se
+                    adapta a las necesidades de nuestros clientes.
+                    Aspiramos a ser el referente confiable en nuestros
+                    servicios, con énfasis en soluciones para el sector
+                    educativo, con el propósito de resolver los problemas
+                    tecnológicos de nuestros clientes y enseñarles a usar
+                    la tecnología de forma adecuada, buscando incorporar
+                    y establecer alianzas estratégicas, para ampliar
+                    nuestro alcance, contribuir a la transformación
+                    digital y construir un futuro más conectado y
+                    accesible para todos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACTO ================= -->
+
+    <section id="contacto">
+
+        <h2 class="titulo">Contacto</h2>
+
+        <div class="contacto-info">
+
+            <p>
+                📧 Correo:
+                <a href="mailto:zentryxtech@gmail.com">
+                    zentryxtech@gmail.com
+                </a>
+            </p>
+
+            <p>
+                📞 Teléfono:
+                <a href="tel:+573176919658">
+                    +57 317 691 9658
+                </a>
+            </p>
+
+            <p>
+                💬 ¿Quieres solicitar un servicio?
+            </p>
+
+            <br>
+
+            <a
+                class="boton"
+                href="https://wa.me/573176919658?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20ZENTRYX-TECH."
+                target="_blank">
+                Contactar por WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PIE DE PÁGINA ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 ZENTRYX-TECH | Soluciones Tecnológicas
+        </p>
+
+    </footer>
+
+</body>
+</html>
